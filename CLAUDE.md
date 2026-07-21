@@ -35,6 +35,9 @@ it, wrap it, but do not rewrite it without being asked.
   is usable the moment it's added in the editor
 - Translations: strings in locales/en.default.json, referenced with `| t`
 - Run `shopify theme check` and report results after changes
+- `url` setting defaults only accept a few Shopify paths (`/collections/all`
+  works; arbitrary paths like `/pages/about` fail on upload) — theme check
+  does NOT catch this, only `theme dev` upload does
 - `shopify theme check` baseline: 8 warnings in stock Dawn files are accepted —
   leave them (fixing would dirty upstream merges); only new offenses in
   custom- code need fixing

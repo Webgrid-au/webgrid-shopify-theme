@@ -11,6 +11,51 @@
         "padding_bottom": 36
       }
     },
+    "custom_image_with_text": {
+      "type": "custom-image-with-text",
+      "settings": {
+        "layout": "image_first",
+        "heading": "Pair text with an image",
+        "link_label": "Learn more",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_multicolumn": {
+      "type": "custom-multicolumn",
+      "blocks": {
+        "column_1": {
+          "type": "column",
+          "settings": {
+            "title": "Fast shipping",
+            "text": "<p>Orders leave the warehouse within one business day.</p>"
+          }
+        },
+        "column_2": {
+          "type": "column",
+          "settings": {
+            "title": "Easy returns",
+            "text": "<p>Thirty days to change your mind, no questions asked.</p>"
+          }
+        },
+        "column_3": {
+          "type": "column",
+          "settings": {
+            "title": "Local support",
+            "text": "<p>Real people in Adelaide answer within a few hours.</p>"
+          }
+        }
+      },
+      "block_order": ["column_1", "column_2", "column_3"],
+      "settings": {
+        "heading": "Why shop with us",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -81,6 +126,8 @@
   },
   "order": [
     "custom_hero",
+    "custom_image_with_text",
+    "custom_multicolumn",
     "image_banner",
     "featured_collection"
   ]
