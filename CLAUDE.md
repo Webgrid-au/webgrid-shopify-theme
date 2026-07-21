@@ -10,6 +10,9 @@ it, wrap it, but do not rewrite it without being asked.
 
 - Shopify Online Store 2.0 theme, Liquid + JSON templates
 - Shopify CLI: `shopify theme dev` for local preview, `shopify theme check` before any commit
+- Demo store: `webgrid-dev.myshopify.com` — `shopify theme dev --store webgrid-dev.myshopify.com`
+  (link lives in gitignored `.shopify/`; the preview prompt wants the storefront
+  password from Online Store → Preferences, not the account login)
 - No build framework unless asked; Dawn's vanilla JS/CSS approach stands
 
 ## Structure
@@ -20,6 +23,9 @@ it, wrap it, but do not rewrite it without being asked.
 - `config/settings_schema.json` — global tokens only (colour, type, spacing)
 - Custom sections we add are prefixed `custom-` and self-contained:
   their CSS lives in the section file or a same-named asset, not in base CSS
+- New custom sections copy the pattern in `sections/custom-hero.liquid`
+  (schema defaults + preset, self-contained scoped CSS, escape every output
+  or leave a `{% # ... %}` comment saying why not)
 
 ## Conventions
 
@@ -29,6 +35,9 @@ it, wrap it, but do not rewrite it without being asked.
   is usable the moment it's added in the editor
 - Translations: strings in locales/en.default.json, referenced with `| t`
 - Run `shopify theme check` and report results after changes
+- `shopify theme check` baseline: 8 warnings in stock Dawn files are accepted —
+  leave them (fixing would dirty upstream merges); only new offenses in
+  custom- code need fixing
 
 ## Don'ts
 
